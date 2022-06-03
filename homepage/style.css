@@ -1,0 +1,231 @@
+@font-face { font-family: SevenSegment; src: url('font/SevenSegment.ttf'); } 
+
+body{
+    background-image: url("images/background.avif");
+    background-size:cover ;
+    background-repeat: no-repeat,no-repeat;
+    margin: 0;
+    padding: 0;
+    background-repeat: false;
+    font-family:SevenSegment ;
+}
+
+
+
+#navBar{
+    position: absolute;
+    height: 75px;
+    background-color:rgba(0,0,0,0.6);
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border-bottom-style: solid;
+    border-bottom-color: #dccc54;
+}
+
+#clockWrapper{
+    height: 200px;
+    width: 500px;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: rgba(0,0,0,0.6);
+    border-style: solid;
+    border-color: #dccc54;
+    text-align: center;
+}
+
+h1{
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+#welcome{
+    margin: 0;
+    margin-top: 40px;
+}
+
+#date{
+    margin: 0;
+}
+
+#google{
+    width: 60%;
+    margin-top: 10px;
+    border: 0;
+    border-bottom: 1px solid #555;
+    background: transparent;
+    font-size: 20px;
+    color: #555;
+    text-align: center;
+}
+
+#google:focus{
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #dccc54;
+    color: white;
+    font-family: SevenSegment;
+}
+
+#google::placeholder{
+    font-family: SevenSegment;
+}
+
+#contentWrapper{
+    display: grid;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    transform: translate(-50%, -100%);
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 20px;
+    position: absolute;
+    left: 50%;
+    top: 100%;
+}
+
+#contentWrapper > div{
+    text-align: center;
+    line-height: 25px;
+    color: white;
+    font-family: SevenSegment;
+    background-color: rgba(0,0,0,0.6);
+    width: 200px;
+    height: 25px;
+    border-bottom:1px solid #dccc54;
+}
+
+#contentWrapper > div > div{
+    height: 200px;
+    background-color: rgba(0,0,0,0.6);
+    display: none;
+}
+
+#contentWrapper > div > div > a{
+    margin: 0;
+    padding: 0;
+    float: left;
+    width: 90%;
+    line-height: 20px;
+    text-align: left;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 6px;
+    color: gray;
+    text-decoration: none;
+    border-bottom: 1px dashed gray;
+}
+
+h4{
+    margin:0;
+    font-weight: normal;
+}
+
+#navBar{
+    text-align: right;
+}
+
+#navBar > a{
+    margin: 0;
+    margin-right: 20px;
+    padding: 0;
+    line-height: 75px;
+    color: gray;
+    text-decoration: none;
+    border-bottom: 1px dashed gray;
+    font-size: 30px;
+}
+
+#timerPage{
+    display: none;
+}
+
+#timerInput{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 85px 10px 85px 10px 85px;
+    grid-template-rows: 1fr;
+    margin-top: 40px;
+}
+
+#timerInput > input:focus{
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #dccc54;
+    color: white;
+    font-family: SevenSegment;
+    
+}
+
+#timerInput > p{
+    border: 0;
+    font-size: 80px;
+    color:white;
+    margin: 0;
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#timerHour, #timerMin, #timerSec{
+    text-align: center;
+    border: 0;
+    background-color: transparent;
+    font-family: SevenSegment;
+    color: white;
+    font-size: 80px;
+    width: 85px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#timerHour::-webkit-inner-spin-button, #timerMin::-webkit-inner-spin-button, #timerSec::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+}
+
+#timerHour::placeholder, #timerMin::placeholder, #timerSec::placeholder{
+    color: white;
+    font-size: 80px;
+}
+
+#timerBtn{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 80px 80px 80px;
+    grid-template-rows: 1fr;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    grid-gap: 60px;
+    font-weight: normal;
+}
+
+#timerBtn > input{
+    width: 60%;
+    margin-top: 15px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    border: 0;
+    border-bottom: 1px solid #555;
+    background: transparent;
+    font-size: 25px;
+    color: gray;
+    font-family: SevenSegment;
+    width: 80px;
+}
+
+#timerBtn > input:focus{
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #dccc54;
+    color: white;
+    font-family: SevenSegment;
+    
+}

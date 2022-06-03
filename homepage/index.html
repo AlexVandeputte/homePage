@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="navBar">
+        <a id="navTimer">Timer</a>
+        <a id="navHome">Home</a>
+    </div>
+    <div id="homePage">
+        <div id="clockWrapper">
+            <h1 id="welcome">Start Page</h1>
+            <h1 id="date"></h1>
+            <input autocomplete="off" type="text" name="input" placeholder="search"id="google">
+        </div>
+        <div id="contentWrapper">
+            <div id="div1">
+                <h4 id="h41">School</h4>
+                <div id="div1Content" display="none">
+                    <a href="https://chamilo.hogent.be/index.php?application=Chamilo%5CCore%5CHome">Chamilo</a>
+                    <a>WebDev</a>
+                </div>
+            </div>
+            <div id="div2">
+                <h4 id="h42">Reddit</h4>
+                <div id="div2Content" display="none">
+                </div>
+            </div>
+            <div id="div3">
+                <h4 id="h43">Fun</h4>
+                <div id="div3Content" display="none">
+                    <a href="https://www.netflix.com/browse">Netflix</a>
+                </div>
+            </div>
+            <div id="div4">
+                <h4 id="h44">Placeholder</h4>
+                <div id="div4Content" display="none">
+                </div>
+            </div>
+            <div id="div5">
+                <h4 id="h45">Tools</h4>
+                <div id="div5Content" display="none">
+                    <a id="Timer1">1min</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="timerPage">
+        <div id="clockWrapper">
+            <div id="timerInput">
+                <input id="timerHour" type="number" placeholder="00" max="99">
+                <p>:</p>
+                <input id="timerMin" type="number" placeholder="00" max="59"> 
+                <p>:</p>
+                <input id="timerSec" type="number" placeholder="00" max="59">
+            </div>
+            <div id="timerBtn">
+                <input type="button" id="timerStart" value="Start">
+                <input type="button" id="timerStop" value="Stop">
+                <input type="button" id="timerReset" value="Reset">
+            </div>
+        </div>
+        
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
