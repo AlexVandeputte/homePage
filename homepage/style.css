@@ -105,20 +105,7 @@ h1{
     display: none;
 }
 
-#contentWrapper > div > div > a{
-    margin: 0;
-    padding: 0;
-    float: left;
-    width: 90%;
-    line-height: 20px;
-    text-align: left;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-top: 6px;
-    color: gray;
-    text-decoration: none;
-    border-bottom: 1px dashed gray;
-}
+
 
 h4{
     margin:0;
@@ -228,4 +215,45 @@ h4{
     color: white;
     font-family: SevenSegment;
     
+}
+
+#contentWrapper > div > div > div {
+    padding: 0;
+    margin: 0;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 90% 10%;
+    grid-template-rows: 1fr;
+    border-bottom: 1px dashed gray;
+    margin-left: 10px;
+    margin-right: 10px;
+
+}
+
+#contentWrapper > div > div > div > a{
+    margin: 0;
+    padding: 0;
+    float: left;
+    width: 90%;
+    line-height: 20px;
+    text-align: left;
+    margin-top: 6px;
+    color: gray;
+    text-decoration: none;
+
+
+}
+
+#contentWrapper > div > div > div>  input{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    width: 70%;
+    line-height: 20px;
+    margin-top: 6px;
+    color: #dccc54;
+    width: 20px;
+    height: 20px;
+
 }

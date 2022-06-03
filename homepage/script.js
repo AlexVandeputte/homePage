@@ -4,9 +4,113 @@ let shouldPlay = false
 let myTimer = null
 let startStopWatch = true
 
+function startup()
+{
+    if(localStorage.getItem("items") === null){
+        let contentStorage = []
+        contentStorage.push(
+            {
+                "cat": "fun",
+                "title": "netflix",
+                "url": "https://www.netflix.com/browse"
+            }
+        )
+        contentStorage.push(
+            {
+                "cat": "fun",
+                "title": "anime",
+                "url": "https://9anime.to/home"
+            }
+        )
+        contentStorage.push(
+            {
+                "cat": "school",
+                "title": "chamilo",
+                "url": "https://chamilo.hogent.be/index.php?application=Chamilo%5CCore%5CHome"
+            }
+        )
+        contentStorage.push(
+            {
+                "cat": "reddit",
+                "title": "antimeme",
+                "url": "https://www.reddit.com/r/antimeme/"
+            }
+        )
+        contentStorage.push(
+            {
+                "cat": "tools",
+                "title": "screen calc",
+                "url": "https://multimonitorcalculator.com/"
+            }
+        )
+        contentStorage.push(
+            {
+                "cat": "placeholder",
+                "title": "hypixel",
+                "url": "https://sky.shiiyu.moe/stats/AlexBelguim/Zucchini"
+            }
+        )
+        localStorage.setItem("items", JSON.stringify(contentStorage))
+    }
+  
+    contentStorage = JSON.parse(localStorage.getItem("items"))
+
+}
+
+
+function toHtml()
+{
+    let parentElement = ""
+    document.getElementById("div1Content").innerHTML = ""
+    document.getElementById("div2Content").innerHTML = ""
+    document.getElementById("div3Content").innerHTML = ""
+    document.getElementById("div4Content").innerHTML = ""
+    document.getElementById("div5Content").innerHTML = ""
+    contentStorage.forEach(el => {
+        switch(el.cat)
+        {
+            case 'school':
+                parentElement = document.getElementById("div1Content")
+                break
+            case 'reddit':
+                parentElement = document.getElementById("div2Content")
+                break
+            case 'fun':
+                parentElement = document.getElementById("div3Content")
+                break
+            case 'placeholder':
+                parentElement = document.getElementById("div4Content")
+                break
+            case 'tools':
+                parentElement = document.getElementById("div5Content")
+            default:
+                break
+        }
+        rowDiv = document.createElement("div")
+        childElmement = document.createElement("a")
+        childElmement.setAttribute("href", `${el.url}`)
+        childElmement.innerHTML = `${el.title}`
+        childRemove = document.createElement("input")
+        childRemove.setAttribute("type", "button")
+        childRemove.setAttribute("name", `${el.title}`)
+        childRemove.setAttribute("id", `${el.title}Remove`)
+        childRemove.setAttribute("value", "-")
+        rowDiv.appendChild(childElmement)
+        rowDiv.appendChild(childRemove)
+        parentElement.appendChild(rowDiv)
+        childRemove.onclick = function() {
+            contentStorage = contentStorage.filter(element => element.title !== el.title)
+            localStorage.setItem("items", JSON.stringify(contentStorage))
+            toHtml()
+        }
+
+    });
+}
 
 function init()
 {
+    startup()
+    toHtml()
     timer()
 }
 
@@ -49,6 +153,22 @@ function getPage(){
 }
 
 //navbar
+document.getElementById("navAdd").onclick = function(){
+    let cat = prompt("geeft cat")
+    let title = prompt("geef title")
+    let url = prompt("geef url")
+    contentStorage.push(
+        {
+            "cat": cat,
+            "title": title,
+            "url": url
+        }
+    )
+    localStorage.setItem("items", JSON.stringify(contentStorage))
+    toHtml()
+}
+
+
 document.getElementById("navTimer").onclick = function(){
     document.getElementById("homePage").style.display = "none"
     document.getElementById("timerPage").style.display = "block"
@@ -214,12 +334,6 @@ function stringFor(str)
     {
         return `${newStr}`
     }
-}
-
-//tools
-document.getElementById("Timer1").onclick = function(){
-    console.log("timer1")
-    setTimeout(startSiren, 5000)
 }
 
 //content boxes movement
