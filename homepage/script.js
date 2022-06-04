@@ -135,10 +135,6 @@ document.addEventListener("keyup", function(event) {
     }
 });
 
-
-
-
-
 //return page 
 function getPage(){
     if(document.getElementById("homePage").style.display !== "none")
