@@ -6,6 +6,6 @@ if you have a idee for a features message me.
 - [X] add option to add links 
 - [X] add option to remove links
 - [ ] do everything with classes
-- [ ] read form json file
+- [ ] read from json file
 - [ ] make icon page 
 
